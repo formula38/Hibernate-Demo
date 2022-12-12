@@ -16,6 +16,44 @@ public class ZoidDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return zoid;
+    }
+
+    public Zoid update(Zoid zoid) {
+        try {
+            hu = new HibernateUtil();
+            hu.beginTransaction();
+            hu.getSession().update(zoid);
+            hu.closeTransaction();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return zoid;
+    }
+
+    public void deleteById(Long id) {
+        try {
+            hu = new HibernateUtil();
+            hu.beginTransaction();
+            Zoid zoid = (Zoid) hu.getSession().load(Zoid.class, id);
+            hu.getSession().update(zoid);
+            hu.closeTransaction();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Zoid getById(Long id) {
+        Zoid zoid = null;
+
+        try {
+            hu = new HibernateUtil();
+            hu.beginTransaction();
+            hu.getSession().load(Zoid.class, id);
+            hu.closeTransaction();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return zoid;
     }
