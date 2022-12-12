@@ -2,7 +2,12 @@ package com.example.hibernatedemo.service;
 
 import com.example.hibernatedemo.data.ZoidDAO;
 import com.example.hibernatedemo.model.Zoid;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
+@Service
+@Transactional
 public class ZoidService {
 
     private final ZoidDAO zoidDAO = new ZoidDAO();

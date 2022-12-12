@@ -2,7 +2,9 @@ package com.example.hibernatedemo.data;
 
 import com.example.hibernatedemo.model.Zoid;
 import com.example.hibernatedemo.util.HibernateUtil;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class ZoidDAO {
     private HibernateUtil hu;
 
