@@ -2,9 +2,8 @@ package com.example.hibernatedemo.service;
 
 import com.example.hibernatedemo.data.ZoidDAO;
 import com.example.hibernatedemo.model.Zoid;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 
 @Service
 @Transactional
